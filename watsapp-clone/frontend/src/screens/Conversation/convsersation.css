@@ -1,0 +1,37 @@
+.conversations{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-lightPurple-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.chat-wrapper{
+    width: 500px;
+    height: 90%;
+}
+.user1-message{
+    text-align: end;
+    color: var(--main-darkPurple-color);
+    font-size: 22px;
+    
+}
+.user2-message{
+    text-align: start;
+    color: var(--main-darkPurple-color);
+    font-size: 22px;
+    background-color: white;
+    height: auto;
+    width: fit-content;
+    max-width: 70%;
+    padding: 4px;
+    border-radius: 10px;
+    border-color: var(--main-darkPurple-color);
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    
+}

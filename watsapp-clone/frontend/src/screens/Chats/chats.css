@@ -1,0 +1,145 @@
+.chats,
+.chats * {
+  box-sizing: border-box;
+}
+.chats {
+  background: #f5e9fe;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-1 {
+  padding: 20px 19px 20px 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.chats2 {
+  color: #420962;
+  text-align: left;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 48px;
+  font-weight: 300;
+  position: relative;
+}
+.group-2 {
+  flex-shrink: 0;
+  width: 362px;
+  height: 45px;
+  position: static;
+}
+.rectangle-3 {
+  background: #ffffff;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #8a26ca;
+  border-width: 1px;
+  width: 362px;
+  height: 45px;
+  position: absolute;
+  left: 14px;
+  top: 108px;
+}
+.edit-fill {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 28px;
+  top: 118px;
+  overflow: visible;
+}
+.buscar {
+  color: #a23de6;
+  text-align: left;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  position: absolute;
+  left: 65px;
+  top: 116px;
+}
+.frame-2 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 593px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-3,
+.frame-4,
+.frame-5,
+.frame-6,
+.frame-7,
+.frame-8,
+.frame-9 {
+  border-style: solid;
+  border-color: #5f1f84;
+  border-width: 0px 0px 1px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 88px;
+  position: relative;
+}
+.ellipse-1 {
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 88px;
+  height: 81px;
+  position: absolute;
+  left: 14.5px;
+  top: 4px;
+  object-fit: cover;
+}
+.username {
+  color: #5f1f84;
+  text-align: left;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  position: relative;
+  width: 115px;
+}
+.date {
+  color: #5f1f84;
+  text-align: left;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  position: relative;
+  width: 51px;
+}
+.frame-10 {
+  background: #ddb6fc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 76px;
+  position: relative;
+  overflow: hidden;
+}

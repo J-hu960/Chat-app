@@ -1,0 +1,152 @@
+.log-in,
+.log-in * {
+  box-sizing: border-box;
+}
+.log-in {
+  background: #f5e9fe;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 844px;
+  position: relative;
+  overflow: hidden;
+}
+.main {
+  background: #ffffff;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding: 10px 10px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 338px;
+  height: 363px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.bienvenido-de-vuelta {
+  color: #420962;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+}
+.form {
+  padding: 40px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 264px;
+  height: 269px;
+  position: relative;
+}
+.input-username {
+  flex-shrink: 0;
+  width: 241px;
+  height: 43px;
+  position: static;
+}
+.rectangle-1 {
+  background: #fbf5ff;
+  border-radius: 20px;
+  width: 241px;
+  height: 43px;
+  position: absolute;
+  left: 11.5px;
+  top: 40px;
+}
+.nombre-de-usuario {
+  color: #420962;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  left: 31.62px;
+  top: calc(50% - 81.5px);
+  width: 133px;
+}
+.input-password {
+  flex-shrink: 0;
+  width: 241px;
+  height: 43px;
+  position: static;
+}
+.rectangle-12 {
+  background: #fbf5ff;
+  border-radius: 20px;
+  width: 241px;
+  height: 43px;
+  position: absolute;
+  left: 11.5px;
+  top: 113px;
+}
+.contrase-a {
+  color: #420962;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  left: 31.62px;
+  top: calc(50% - 8.5px);
+  width: 81px;
+}
+.group-1 {
+  flex-shrink: 0;
+  width: 238px;
+  height: 41px;
+  position: static;
+}
+.rectangle-2 {
+  background: #a23de6;
+  width: 238px;
+  height: 41px;
+  position: absolute;
+  left: 13px;
+  top: 186px;
+}
+.iniciar-sesi-n {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  position: absolute;
+  left: 87px;
+  top: 198px;
+}
+.a-n-no-tienes-cuenta-registrate-aqu {
+  color: #420962;
+  text-align: left;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  width: 270px;
+}
+.a-n-no-tienes-cuenta-registrate-aqu-span {
+  color: #420962;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+.a-n-no-tienes-cuenta-registrate-aqu-span2 {
+  color: #420962;
+  font-family: "Inter-Light", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: underline;
+}
