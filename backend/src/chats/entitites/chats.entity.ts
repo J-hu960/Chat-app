@@ -1,16 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Users } from 'src/users/enities/users.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, ManyToOne } from 'typeorm';
 
 @Entity()
-export class Message {
+export class Chat {
   @PrimaryGeneratedColumn()
   id: number;
 
-//   @Column() //Relation to user, many-to-one relation
-//   createdBy: string; 
+  @ManyToOne(()=>Users,(user)=>user.Pk_User) //Relation to user, many-to-one relation
+  createdBy: Users; 
 
 
-//   @Column() //lista de usuarios dentro del chat M:M
-//   members: string;
+  @ManyToMany(()=>Users) //lista de usuarios dentro del chat M:M
+   members: Users[];
 
   @Column()
   createdAt:Date
@@ -22,8 +23,7 @@ export class Message {
   secret:string //llave secreta que se debe ibtroducir para que un usario se pueda 
   //unir a la sala
   
-  @Column()
-  messages:string //relacion 1:M hacia los mensajes que pertenecen al Chat.
+  
 
 
 

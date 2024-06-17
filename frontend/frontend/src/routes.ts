@@ -7,5 +7,6 @@ export const PrivateRoutes ={
     CHAT:'chat',
     CONVERSATION:'conversation',
     CONFIG:'config',
-    NEWCHAT:'newchat'
+    NEWCHAT:'newchat',
+    JOINCHAT:'joinchat'
 }

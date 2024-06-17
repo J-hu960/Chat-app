@@ -6,6 +6,7 @@ import NewChat from "./screens/new-chat/NewChat"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { PrivateRoutes, PublicRoutes } from "./routes"
 import NavBar from "./components/NavegationBar/NavBar"
+import JoinChat from "./screens/join-chat/JoinChat"
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
                  <Route path={PrivateRoutes.CHAT}element={<Chats />} />
                  <Route path={PrivateRoutes.CONVERSATION} element={<Conversation/>} />
                  <Route path={PrivateRoutes.NEWCHAT}element={<NewChat />} />
+                 <Route path={PrivateRoutes.JOINCHAT}element={<JoinChat />} />
+
               {/* </Route> */}
       </Routes>
       <NavBar />

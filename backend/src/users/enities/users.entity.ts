@@ -1,16 +1,21 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { IsEmail, MaxLength, MinLength, isEmail } from "class-validator";
+import { Column, CreateDateColumn, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class Users{
 
-  @Column({ length: 40 })
-  mail: string;
+    @PrimaryGeneratedColumn()
+    Pk_User:number;
 
+    @Column()
+    @IsEmail()
+    Email:string
 
-  @Column()
-  password: string;
+    @Column()
+    @MinLength(8)
+    @MaxLength(15)
+    Password:string
 
+ 
 
 }
