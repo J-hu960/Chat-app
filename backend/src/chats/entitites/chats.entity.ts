@@ -1,16 +1,17 @@
 import { Users } from 'src/users/enities/users.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, ManyToOne, JoinTable } from 'typeorm';
 
 @Entity()
 export class Chat {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(()=>Users,(user)=>user.Pk_User) //Relation to user, many-to-one relation
+  @ManyToOne(()=>Users,(user)=>user.Pk_User,{cascade:true}) //Relation to user, many-to-one relation
   createdBy: Users; 
 
 
-  @ManyToMany(()=>Users) //lista de usuarios dentro del chat M:M
+  @ManyToMany(()=>Users,{cascade:true}) //lista de usuarios dentro del chat M:M
+  @JoinTable()
    members: Users[];
 
   @Column()

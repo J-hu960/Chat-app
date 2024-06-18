@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './chats.css';
 import { Link } from 'react-router-dom';
 import { PrivateRoutes } from '../../routes';
-
+import ChatPreview from '../../components/ChatPreview';
+import axios from 'axios';
 const Chats = () => {
+
+  const findUsersChats = async () => {
+    const token =  localStorage.getItem('token');
+    console.log(token)
+    try {
+      const response = await axios.get('http://localhost:5100/api/v1/whatsclone/chats',{
+        headers:{
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      console.log(response.data); 
+    } catch (error) {
+      console.error('Error fetching chats:', error);
+    }
+  };
+  useEffect(()=>{
+     findUsersChats()
+  },[])
+
+
+
   return (
     <div className="chats">
       <div className="frame-1">
@@ -16,41 +38,9 @@ const Chats = () => {
         <Link className='link p-3 rounded-full font-bold' to={`/${PrivateRoutes.JOINCHAT}`}>Unirse a sala</Link>
         </div>
       <div className="frame-2">
-        <div className="frame-3">
-          <img className="ellipse-1" src="ellipse-10.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-4">
-          <img className="ellipse-1" src="ellipse-11.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-5">
-          <img className="ellipse-1" src="ellipse-12.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-6">
-          <img className="ellipse-1" src="ellipse-13.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-7">
-          <img className="ellipse-1" src="ellipse-14.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-8">
-          <img className="ellipse-1" src="ellipse-15.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
-        <div className="frame-9">
-          <img className="ellipse-1" src="ellipse-16.png" alt="user" />
-          <div className="username">Title</div>
-          <div className="date">date</div>
-        </div>
+        <ChatPreview />
+        
+        
       </div>
     </div>
   );

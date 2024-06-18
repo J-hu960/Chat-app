@@ -1,30 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
-
+import axios from 'axios';
 const LoginComponent = () => {
+  const [nombre,setNombre] = useState<string>('')
+  const [contra,setContra] = useState<string>('')
+
+  const handleLogin =async (e:React.FormEvent)=>{
+    // "Email":"jordi@gmail.com",
+    // "Password":"21912191"
+   
+    e.preventDefault()
+    try {
+      const response = await axios.post('http://localhost:5100/api/v1/whatsclone/auth/signIn',{
+        Email:nombre,
+        Password:contra
+      })
+      console.log(response.data)
+      localStorage.setItem('token',response.data)
+      
+    } catch (error) {
+      console.log(error)
+    }
+   
+  }
   return (
     <div className="log-in">
       <div className="main">
         <div className="bienvenido-de-vuelta">¡Bienvenido de vuelta!</div>
-        <div className="form">
+        <form onSubmit={e=>handleLogin(e)} className="form">
           <div className="input-username">
-            <input type='text' className="rectangle-1" />
+            <input value={nombre} onChange={e=>setNombre(e.target.value)} type='text' className="rectangle-1" />
             <div className="nombre-de-usuario">Nombre de usuario</div>
           </div>
           <div className="input-password">
-          <input type='password' className="rectangle-12" />
+          <input value={contra} onChange={e=>setContra(e.target.value)} type='password' className="rectangle-12" />
           <div className="contrase-a">Contraseña</div>
           </div>
           <div className="group-1">
             <div className="rectangle-2"></div>
-            <div className="iniciar-sesi-n">Iniciar Sesión</div>
+            <input value={'Iniciar Sesión'} type='submit' className="iniciar-sesi-n" />
           </div>
-        </div>
-        <div className="a-n-no-tienes-cuenta-registrate-aqu">
-          <span>
-           
-          </span>
-        </div>
+        </form>
+  
       </div>
     </div>
   );
