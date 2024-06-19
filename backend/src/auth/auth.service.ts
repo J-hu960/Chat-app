@@ -23,7 +23,7 @@ export class AuthService {
             throw new UnauthorizedException()
          }
 
-        const jwt = await this.createAccessToken(userStored.Pk_User.toString())
+        const jwt = await this.createAccessToken(userStored.Email.toString())
          console.log(jwt)
         return jwt
      }

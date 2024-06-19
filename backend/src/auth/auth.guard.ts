@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate{
          
         const request = context.switchToHttp().getRequest()
         const token = this.extractTokenFromHeader(request)
+        console.log(token)
 
         if(!token){
             throw new UnauthorizedException()
@@ -25,6 +26,7 @@ export class AuthGuard implements CanActivate{
                     secret:'Esta es la llave secreta deberia estar en variables de configuracion.'
                 }
             )
+            console.log(payload.mail)
             const user = await this.userService.findUserbyMail(payload.mail)
             request['user'] =  user
             console.log(user)
