@@ -1,9 +1,14 @@
 import  React, { useEffect, useState } from 'react'
 import './convsersation.css'
-import { Message } from '../../types';
+import { Chat, Message } from '../../types';
 import { io } from "socket.io-client";
+import { useLocation, useParams } from 'react-router-dom';
 
 const Conversation = () => {
+  const {chatId} = useParams()
+  const location = useLocation()
+  const chat:Chat = location.state.chat  || {}
+  console.log(chat)
   const [userInput,setUserInput] = useState<string>()
   const token =  localStorage.getItem('token');
   console.log(token)
@@ -14,14 +19,14 @@ const Conversation = () => {
   })  //namespace:messageEvents
   socket.on('message-created',(data)=>
     setMessages(messages=>[...messages,data])
-
 )
+  
   const [messages,setMessages] = useState<Message[]>([])
 
   const getConversationMessages =async() =>{
     
     try {
-        socket.emit('findAllMessages',{roomId:5},(response)=>{
+        socket.emit('findAllMessages',{roomId:chatId},(response)=>{
           setMessages(response)
         })
     } catch (error) {
@@ -34,17 +39,22 @@ const Conversation = () => {
     socket.emit('newMessage',{
       data:{
         content:`${userInput}`,
-        roomId:5,
+        roomId:chat.id,
         userId:1
     }
 
     })
     setUserInput('')
   }
+
+  const joinRoom=()=>{
+    socket.emit('join-room',chat.id)
+  }
   
 
   useEffect(()=>{
     getConversationMessages()
+    // joinRoom()
     
  },[])
 
@@ -52,8 +62,8 @@ const Conversation = () => {
     return (
         <div className="conversations">
           <header className='w-full text-white p-5 flex items-center justify-around'>
-            <h1 className='text-2xl'>Conversation title</h1>
-             <h3>created by: <strong>Jordi</strong></h3>
+            <h1 className='text-2xl'>{chat.title}</h1>
+             <h3>created by: <strong>{chat.members[0].Email}</strong></h3>
           </header>
           <main className='chat-wrapper overflow-y-scroll p-10 w-full h-3/4 bg-white'>
                  {messages && messages.length >0 ?(

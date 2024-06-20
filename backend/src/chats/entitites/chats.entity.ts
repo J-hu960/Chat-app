@@ -6,11 +6,11 @@ export class Chat {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(()=>Users,(user)=>user.Pk_User,{cascade:true}) //Relation to user, many-to-one relation
+  @ManyToOne(()=>Users,(user)=>user.Pk_User,{cascade:true,eager:true}) //Relation to user, many-to-one relation
   createdBy: Users; 
 
 
-  @ManyToMany(()=>Users,{cascade:true}) //lista de usuarios dentro del chat M:M
+  @ManyToMany(()=>Users,{cascade:true,eager:true}) //lista de usuarios dentro del chat M:M
   @JoinTable()
    members: Users[];
 

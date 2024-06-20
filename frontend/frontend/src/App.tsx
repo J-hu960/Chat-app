@@ -20,7 +20,7 @@ function App() {
            {/* <Route path={PublicRoutes.SIGNUP} element={<SignUp />} /> */}
             {/* <Route element={<AuthGuard />}> */}
                  <Route path={PrivateRoutes.CHAT}element={<Chats />} />
-                 <Route path={PrivateRoutes.CONVERSATION} element={<Conversation/>} />
+                 <Route path={`${PrivateRoutes.CONVERSATION}/:chatId`} element={<Conversation/>} />
                  <Route path={PrivateRoutes.NEWCHAT}element={<NewChat />} />
                  <Route path={PrivateRoutes.JOINCHAT}element={<JoinChat />} />
 

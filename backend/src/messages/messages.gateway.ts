@@ -20,7 +20,7 @@ export class MessagesGateway {
     const {content,roomId,userId} = body.data
     
      const createdMessage = await this.messagesService.createAndSaveMessage(content,roomId,userId)
-    client.emit('message-created',createdMessage) //    client.broadcast.to(roomId).emit('message-created',createdMessage) 
+     client.broadcast.to(roomId.toString()).emit('message-created',createdMessage) //  client.emit('message-created',createdMessage)
     console.log(`Message emmited to room ${roomId}`)
   }
 
@@ -30,4 +30,8 @@ export class MessagesGateway {
     client.join(roomId.toString())
     return messages
   }
+
+  
+
+
 }
