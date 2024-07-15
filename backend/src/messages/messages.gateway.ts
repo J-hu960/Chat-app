@@ -2,6 +2,7 @@ import { ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway } from
 import { MessagesService } from './messages.service';
 import { creatMessageDTO } from './dto/createMessageDTO';
 import { Socket } from 'socket.io';
+import { UseGuards } from '@nestjs/common';
 
 @WebSocketGateway({namespace:'messageEvents',cors:{
   origin: 'http://localhost:5173',
@@ -14,7 +15,6 @@ export class MessagesGateway {
     private readonly messagesService: MessagesService
     
   ) {}
-  
   @SubscribeMessage('newMessage')
   async handleNewMessage(@MessageBody() body:any, @ConnectedSocket() client:Socket){
     const {content,roomId,userId} = body.data

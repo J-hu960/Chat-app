@@ -8,6 +8,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('signUp')
     signUp(@Body() body:CreateUserDto){
+        console.log('hola')
         return this.authService.signUp(body)
     }
 
